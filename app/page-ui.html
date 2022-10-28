@@ -1,10 +1,11 @@
 <head>
   <style>
     body { 
-      background-color: f9f5ec; 
+      background-color: 104b6b; 
       font-family: "arial"; 
       text-align: center;
       border-radius: 5;
+      color: white;
     }
   </style>
   <title>page</title>
@@ -13,6 +14,14 @@
 <body>
   <main>
     <h1>page</h1>
+    <p>Make a new public webpage at http://[your-ship-url]/apps/feature/[name]</p>
+    <form action=javascript:postNewPage()>
+      <label for="Name">Name:</label>
+      <input type="text" id="nameBox"><br><br>
+      <label for="HTML">HTML:</label>
+      <input type="text" id="htmlBox"><br><br>
+      <input type="submit" value="Make Page Live">
+    </form>
     <div id="page"></div>
     <script>
     
@@ -25,32 +34,44 @@ function post(tag, data) {
     location.reload()
 }
 
+getState()
+    .then((state) => renderPage(state))
+
+async function getState() {
+    const response = await fetch('/apps/page/state')
+    return response.json()
+}
+
 
 function postNewPage()
 {
-    post("new-page", document.getElementById('newpageBox').value);
+    post("new-page", [document.getElementById('nameBox').value, document.getElementById('htmlBox').value]);
+}
+
+function postDeletePage()
+{
+    post("new-page", document.getElementById('newUrlBox').value);
 }
 
 function renderPage()
 {
     const page = document.getElementById("page");
 
-    const pageText = document.createElement("div");
-    pageText.textContent = "Paste raw HTML into the box below. Hit enter to make it public at [your-ship-url]/page/public";
-    page.appendChild(pageText);
+    /*const newHtmlBox = document.createElement('input'); 
+    newHtmlBox.type = "text"; 
+    newHtmlBox.id = "newHtmlBox";
+    page.appendChild(newHtmlBox);
 
-    const newpageBox = document.createElement('input'); 
-    newpageBox.type = "text"; 
-    newpageBox.id = "newpageBox";
-    page.appendChild(newpageBox);
+    const newUrlBox = document.createElement('input'); 
+    newUrlBox.type = "text"; 
+    newUrlBox.id = "newUrlBox";
+    page.appendChild(newUrlBox);
 
     const newpageButton = document.createElement("button");
     newpageButton.textContent = "Create New Page";
     newpageButton.addEventListener('click', postNewPage);
-    page.appendChild(newpageButton);
+    page.appendChild(newpageButton);*/
 }
-
-renderPage()
 
 </script>
 </main>

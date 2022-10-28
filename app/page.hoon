@@ -82,12 +82,16 @@
         (send [200 ~ [%html page-ui]])
           ::
           [%apps %page %state ~]
+        ?.  authenticated.inbound-request
+          :_  state
+          %-  send
+          [302 ~ [%login-redirect './apps/page']]
         :_  state
         (send [200 ~ [%json (enjs-state +.state)]])
           ::
-          [%apps %page @t]
+          [%apps %page @tas ~]
         :_  state
-        (send [200 ~ [%html (~(got by pages) t.t.site)]])
+        (send [200 ~ [%html (~(got by pages) `@t`+>-.site)]])
       == 
     ==
   ::
