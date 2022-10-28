@@ -1,0 +1,9 @@
+:~  title+'Page'
+    info+'Post webpages to the public internet.'
+    color+0x10.4b6b
+    base+'page'
+    site+/apps/page
+    version+[1 0 0]
+    website+'https://www.otherlife.co/'
+    license+'MIT'
+==
