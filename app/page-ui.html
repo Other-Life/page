@@ -20,9 +20,11 @@
       <input type="text" id="nameBox"><br><br>
       <label for="HTML">HTML:</label>
       <input type="text" id="htmlBox"><br><br>
-      <input type="submit" value="Make Page Live">
+      <input type="submit" value="Create Page">
     </form>
-    <div id="page"></div>
+    <br>
+    <h3>My Pages</h3>
+    <div id="delete-buttons"></div>
     <script>
     
 
@@ -50,27 +52,29 @@ function postNewPage()
 
 function postDeletePage()
 {
-    post("new-page", document.getElementById('newUrlBox').value);
+    var page = event.currentTarget.myPage;
+    post("delete-page", page);
 }
 
-function renderPage()
+function renderPage(state)
 {
-    const page = document.getElementById("page");
+    const deletions = document.getElementById("delete-buttons");
 
-    /*const newHtmlBox = document.createElement('input'); 
-    newHtmlBox.type = "text"; 
-    newHtmlBox.id = "newHtmlBox";
-    page.appendChild(newHtmlBox);
+    for(var i = 0; i < state.length; i++)
+    {
+        const page = document.createElement("div");
+        page.textContent = state[i][0] + "     ";
+        deletions.appendChild(page);
 
-    const newUrlBox = document.createElement('input'); 
-    newUrlBox.type = "text"; 
-    newUrlBox.id = "newUrlBox";
-    page.appendChild(newUrlBox);
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.myPage = state[i][0]
+        deleteButton.addEventListener('click', postDeletePage);
+        page.appendChild(deleteButton);
 
-    const newpageButton = document.createElement("button");
-    newpageButton.textContent = "Create New Page";
-    newpageButton.addEventListener('click', postNewPage);
-    page.appendChild(newpageButton);*/
+        page.appendChild(document.createElement("br"));
+        page.appendChild(document.createElement("br"));
+    }
 }
 
 </script>
