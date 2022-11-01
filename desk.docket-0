@@ -4,6 +4,6 @@
     base+'page'
     site+/apps/page
     version+[1 0 0]
-    website+'https://www.otherlife.co/'
+    website+'https://github.com/Other-Life/page'
     license+'MIT'
 ==
