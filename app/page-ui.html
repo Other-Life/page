@@ -276,7 +276,8 @@
       font-weight: bold;
       border: 1px solid #146e91dc;
       margin-left: 10px;
-      border-radius: 10px;;
+      border-radius: 10px;
+      ;
       position: static;
       margin-top: 10px;
       width: 96%;
@@ -285,7 +286,7 @@
     .del {
       float: right;
       background-color: red;
-      border: none; 
+      border: none;
       color: white;
       border-radius: 10px;
       padding: 7px;
@@ -304,7 +305,8 @@
       margin: 20px;
       border: 1px solid #146e91dc;
       font-weight: bold;
-      margin-left: 115px !important;;
+      margin-left: 115px !important;
+      ;
     }
 
     .modal-btn:hover {
@@ -321,6 +323,12 @@
       background-color: #111928;
       padding: 10px;
       float: left;
+    }
+
+    .toast-top-right {
+      position: fixed !important;
+      margin-top: 50px;
+      right: 0px;
     }
 
     @media screen and (max-width: 860px) {
@@ -354,7 +362,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js"
     integrity="sha512-I6CdJdruzGtvDyvdO4YsiAq+pkWf2efgd1ZUSK2FnM/u2VuRASPC7GowWQrWyjxCZn6CT89s3ddGI+be0Ak9Fg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"
     integrity="sha512-rQImvJlBa8MV1Tl1SXR5zD2bWfmgCEIzTieFegGg89AAt7j/NBEe50M5CqYQJnRwtkjKMmuYgHBqtD1Ubbk5ww=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"
@@ -365,6 +373,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/keymap/vim.min.js"
     integrity="sha512-CRScbOTlIJVds3U03uRuDwsYvvq3qFtW5rR7bdlWMzyaKASpibWkS4qhUwE0mfNIpwRurtR3V7bKMLPTtjXusw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+    integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+    integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body style="height: 100%">
@@ -376,7 +390,8 @@
         <label class="name-label z-index-10 fixed no-select" for="Name">Name</label>
         <input class="name-input z-index-10 fixed border-radius-10 border-light-blue" type="text" id="nameBox"
           autocomplete="off" ;><br><br>
-        <input type="button" onclick="postNewPage()" class="create-page-btn fixed hover border-radius-10 border-light-blue" value="Create Page">
+        <input type="button" onclick="postNewPage()"
+          class="create-page-btn fixed hover border-radius-10 border-light-blue" value="Create Page">
         <div style="position: fixed; top: 100px; width: 100%; height: 100%;">
           <div id="scrollToTop" class="scroll-to-top"></div>
           <textarea id="codeMirror" oninput="return myKeyPress(event)" class="CodeMirror"></textarea>
@@ -391,8 +406,11 @@
   </div>
 
   <div class="gutter fixed box-shadow" id="gutter">
-    <div class="fixed border-radius-10 light-blue-gradient settings no-select" onclick="modalActions('options','open')"><span class="material-icons"
-        style="height: 60px; width: 60px; font-size: 50px; margin-left: 5px; margin-top: 10px;" class="no-select">settings</span></div>
+    <div class="fixed border-radius-10 light-blue-gradient settings no-select" onclick="modalActions('options','open')">
+      <span class="material-icons"
+        style="height: 60px; width: 60px; font-size: 50px; margin-left: 5px; margin-top: 10px;"
+        class="no-select">settings</span>
+    </div>
   </div>
   </div>
 
@@ -415,7 +433,8 @@
         <hr class="modal-line border-light-blue">
         <span class="my-modal-title no-select">Options</span>
         <span class="close no-select" onclick="modalActions('options','close')">&times;</span>
-        <button id="switchKeyMap" class="modal-btn fixed border-radius-10 border-light-blue" onclick="changeKeyBindings()">Switch to Vim</button>
+        <button id="switchKeyMap" class="modal-btn fixed border-radius-10 border-light-blue"
+          onclick="changeKeyBindings()">Switch to Vim</button>
       </div>
     </div>
   </div>
@@ -434,8 +453,9 @@
     <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" onclick="zoom('down')">
       <span class="material-icons icon fixed">zoom_out</span>
     </div>
-    <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" id="topBtn"
-      onclick="jumpToLine(0);"><span class="material-icons icon fixed">arrow_upward</span></div>
+    <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" id="topBtn" onclick="jumpToLine(0);">
+      <span class="material-icons icon fixed">arrow_upward</span>
+    </div>
   </div>
   <script>
 
@@ -472,7 +492,7 @@
       text = cm.getValue();
       namebox = document.getElementById("nameBox").value;
       console.log(text);
-      console.log("nb",namebox);
+      console.log("nb", namebox);
       saveText()
     });
 
@@ -541,7 +561,6 @@
         body: JSON.stringify({ [tag]: data })
       })
       console.log(JSON.stringify({ [tag]: data }))
-      location.reload()
     }
 
     async function getState() {
@@ -550,15 +569,47 @@
     }
 
     function postNewPage() {
-      var nb = document.getElementById("nameBox").value;
-      var text = codeMirror.getValue();
-      post("new-page", [nb, text]);
-      console.log(namebox)
+      var pages = getState().then((page) => {
+        console.log(page.length)
+        if (page == null || page == undefined) {
+          toastr.error("Error, check connection");
+          return;
+        }
+        for (var x = 0; x < page.length; x++) {
+          if (page[x][0] == document.getElementById("nameBox").value) {
+            toastr.error("Page already exists");
+            return;
+          }
+        }
+        if (codeMirror.getValue() == "") {
+          toastr.error("Page code is empty");
+          return;
+        }
+        if (document.getElementById("nameBox").value == "" || document.getElementById("nameBox").value == " " || document.getElementById("nameBox").value == undefined || document.getElementById("nameBox").value == null) {
+          toastr.error("Page name cannot be empty");
+          return;
+        }
+        else if (page.length > 10) {
+          toastr.error("You have reached the maximum number of pages");
+          return;
+        } else {
+          var nb = document.getElementById("nameBox").value;
+          var text = codeMirror.getValue();
+          post("new-page", [nb, text]);
+          console.log(namebox)
+          toastr.success("Page created");
+          setTimeout(function () {
+            location.reload();
+          }, 2000);
+        }
+      }
+      )
     }
 
     function postDeletePage() {
       var page = event.currentTarget.myPage;
       post("delete-page", page);
+      location.reload();
     }
 
     function renderPage(state) {
@@ -571,11 +622,29 @@
 
         const deleteButton = document.createElement("button");
         deleteButton.className = "page-list-item";
-        deleteButton.innerHTML = "<span class='pages-title'>"+state[i][0]+"</span><button class='del'>Delete</button>";
+        deleteButton.innerHTML = "<span class='pages-title'>" + state[i][0] + "</span><button class='del'>Delete</button>";
         deleteButton.myPage = state[i][0]
         deleteButton.addEventListener('click', postDeletePage);
         page.appendChild(deleteButton);
       }
+    }
+
+    // Set the options that I want
+    toastr.options = {
+      "closeButton": true,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
     }
 
     //For testing delete button UI
