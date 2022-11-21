@@ -40,6 +40,8 @@
       cursor: pointer;
       right: 20px;
       top: 10px;
+      text-align: center;
+      width: 95px;
       background-color: #111928;
       color: rgb(199, 199, 199);
       font-weight: bold;
@@ -531,9 +533,9 @@
     <form>
       <label class="name-label z-index-10 fixed no-select" for="Name">Name</label>
       <input maxlength="20" class="name-input z-index-10 fixed border-radius-10 border-light-blue" type="text"
-        id="nameBox" autocomplete="off" ;><br><br>
-      <input type="button" onclick="postNewPage()"
-        class="create-page-btn fixed hover border-radius-10 border-light-blue" value="Create Page">
+        id="nameBox" autocomplete="off" onkeyup="onNameChange()"><br><br>
+      <div type="button" onclick="postNewPage()" id="createPage"
+        class="create-page-btn fixed hover border-radius-10 border-light-blue">Create Page</div>
       <div style="position: fixed; top: 100px; width: 100%; height: 100%;">
         <div id="scrollToTop" class="scroll-to-top"></div>
         <textarea id="codeMirror" oninput="return myKeyPress(event)" class="CodeMirror"></textarea>
@@ -696,6 +698,7 @@
   document.getElementById("importYes").addEventListener("click", function () {
     document.getElementById("nameBox").value = importPageName;
     codeMirror.setValue(importPage);
+    document.getElementById("createPage").innerHTML = "Save Page";
     modalActions('import', 'close');
     modalActions('pages', 'close');
   });
@@ -713,6 +716,16 @@
       location.reload();
     }, 2000);
   });
+
+  function onNameChange() {
+    for (var x = 0; x < gState.length; x++) {
+        if (gState[x][0] == document.getElementById("nameBox").value) {
+          document.getElementById("createPage").innerHTML = "Save Page";
+          return;
+        }
+      }
+      document.getElementById("createPage").innerHTML = "Create Page";
+  }
 
   function changeKeyBindings() {
     if (codeMirror.getOption("keyMap") !== "vim") {
@@ -880,7 +893,7 @@
     "hideMethod": "fadeOut"
   }
 
-  //For testing delete button UI
+    //For testing delete button UI
   /*
   var page = [];
 
