@@ -6,7 +6,7 @@
 
     body {
       background-color: #000c13;
-      color: white;
+      color: rgb(199, 199, 199);
       width: 99%;
       overflow: hidden;
       height: 80vh;
@@ -24,7 +24,7 @@
       top: 12px;
       font-size: 16px;
       background-color: #111928;
-      color: white;
+      color: rgb(199, 199, 199);
       font-weight: bold;
       border: none;
       padding: 10px;
@@ -41,7 +41,7 @@
       right: 20px;
       top: 10px;
       background-color: #111928;
-      color: white;
+      color: rgb(199, 199, 199);
       font-weight: bold;
     }
 
@@ -66,7 +66,7 @@
       font-size: 16px !important;
       cursor: pointer;
       background-color: #111928;
-      color: white;
+      color: rgb(199, 199, 199);
       font-weight: bold;
     }
 
@@ -90,7 +90,7 @@
     .modal {
       top: 130px;
       width: 500px;
-      height: 690px;
+      height: 720px;
       z-index: -4;
       opacity: 0;
       transition: .2s;
@@ -143,16 +143,27 @@
     }
 
     .page-h1 {
+      position: absolute;
       font-size: 30px;
-      margin-top: -70px;
-      background-color: #111928;
-      border: 1px solid #146e91dc;
+      margin-top: 10px;
       padding: 10px;
+      width: 100%;
+      top: -5px;
+      left: 0px;
+      text-align: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 500;
     }
 
     .info {
       font-size: 16px;
-      top: 60px;
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      top: 50px;
+      left: 0px;
+      font-weight: bold;
+      text-align: center;
     }
 
     #codeInput {
@@ -272,25 +283,69 @@
       font-size: 16px !important;
       cursor: pointer;
       background-color: #111928;
-      color: white;
+      color: rgb(199, 199, 199);
       font-weight: bold;
       border: 1px solid #146e91dc;
       margin-left: 10px;
       border-radius: 10px;
-      ;
       position: static;
       margin-top: 10px;
       width: 96%;
+    }
+
+    .get-code {
+      position: relative;
+      float: right;
+      background-color: rgba(0, 1, 73, 0.281);
+      border: none;
+      color: rgb(199, 199, 199);
+      border-radius: 10px;
+      padding: 7px;
+      margin-left: -10px;
+      margin-top: 1px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 8px;
+      border: 2px rgb(0, 0, 0) solid;
+      height: 42px;
+      font-size: 15px;
+      width: 42px;
+    }
+
+    .get-code:hover {
+      background-color: rgb(63, 98, 110);
+      cursor: pointer;
+    }
+
+    .link {
+      position: relative;
+      float: right;
+      background-color: rgba(0, 1, 73, 0.281);
+      border: none;
+      color: rgb(199, 199, 199);
+      border-radius: 10px;
+      padding: 7px;
+      margin-left: -80px;
+      margin-top: 1px;
+      margin-right: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 8px;
+      border: 2px rgb(0, 0, 0) solid;
     }
 
     .del {
       float: right;
       background-color: red;
       border: none;
-      color: white;
+      color: rgb(199, 199, 199);
       border-radius: 10px;
+      margin-left: 10px;
+      font-size: 8px;
       padding: 7px;
-      margin-top: 3px;
+      margin-top: 1px;
       font-weight: bold;
       border: 2px rgb(19, 1, 1) solid;
     }
@@ -298,7 +353,7 @@
     .modal-btn {
       position: fixed;
       background-color: #000c13;
-      color: white;
+      color: rgb(199, 199, 199);
       width: 170px;
       padding: 20px;
       cursor: pointer;
@@ -306,15 +361,81 @@
       border: 1px solid #146e91dc;
       font-weight: bold;
       margin-left: 115px !important;
-      ;
+    }
+
+    .override-btns {
+      position: fixed;
+      background-color: #000c13;
+      color: rgb(199, 199, 199);
+      width: 170px;
+      margin-top: 25px;
+      padding: 20px;
+      cursor: pointer;
+      border: 1px solid #146e91dc;
+      font-weight: bold;
+    }
+
+    .delete-btns {
+      position: fixed;
+      background-color: #000c13;
+      color: rgb(199, 199, 199);
+      width: 170px;
+      margin-top: 25px;
+      padding: 20px;
+      cursor: pointer;
+      border: 1px solid #146e91dc;
+      font-weight: bold;
+    }
+
+    .i-yes {
+      margin-top: 40px;
+      margin-left: -350px !important;
+    }
+
+    .i-no {
+      margin-top: 40px;
+      margin-left: -160px !important;
+    }
+
+    .o-yes {
+      margin-top: 40px;
+      margin-left: -340px !important;
+    }
+
+    .o-no {
+      margin-top: 40px;
+      margin-left: -150px !important;
+    }
+
+    .d-yes {
+      margin-top: 40px;
+      margin-left: -315px !important;
+    }
+
+    .d-no {
+      margin-top: 40px;
+      margin-left: -140px !important;
     }
 
     .modal-btn:hover {
       background-color: #146e91dc;
     }
 
+    .override-btns:hover {
+      background-color: #146e91dc;
+    }
+
+    .delete-btns:hover {
+      background-color: #146e91dc;
+    }
+
     .del:hover {
       background-color: darkred;
+      cursor: pointer;
+    }
+
+    .link:hover {
+      background-color: rgb(63, 98, 110);
       cursor: pointer;
     }
 
@@ -329,6 +450,28 @@
       position: fixed !important;
       margin-top: 50px;
       right: 0px;
+    }
+
+    .override-text {
+      width: 100%;
+      margin-left: 35px;
+      margin-top: 40px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #111928;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #273c64;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #273c64;
     }
 
     @media screen and (max-width: 860px) {
@@ -381,279 +524,368 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body style="height: 100%">
+<div>
+  <br>
+  <p class="html-label fixed no-select">Enter HTML Code Below</p>
   <div>
-    <br>
-    <p class="html-label fixed no-select">Enter HTML Code Below</p>
-    <div>
-      <form>
-        <label class="name-label z-index-10 fixed no-select" for="Name">Name</label>
-        <input class="name-input z-index-10 fixed border-radius-10 border-light-blue" type="text" id="nameBox"
-          autocomplete="off" ;><br><br>
-        <input type="button" onclick="postNewPage()"
-          class="create-page-btn fixed hover border-radius-10 border-light-blue" value="Create Page">
-        <div style="position: fixed; top: 100px; width: 100%; height: 100%;">
-          <div id="scrollToTop" class="scroll-to-top"></div>
-          <textarea id="codeMirror" oninput="return myKeyPress(event)" class="CodeMirror"></textarea>
+    <form>
+      <label class="name-label z-index-10 fixed no-select" for="Name">Name</label>
+      <input maxlength="20" class="name-input z-index-10 fixed border-radius-10 border-light-blue" type="text"
+        id="nameBox" autocomplete="off" ;><br><br>
+      <input type="button" onclick="postNewPage()"
+        class="create-page-btn fixed hover border-radius-10 border-light-blue" value="Create Page">
+      <div style="position: fixed; top: 100px; width: 100%; height: 100%;">
+        <div id="scrollToTop" class="scroll-to-top"></div>
+        <textarea id="codeMirror" oninput="return myKeyPress(event)" class="CodeMirror"></textarea>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="page-btns">
+  <input type="button" class="page-btn fixed hover z-index-10 border-radius-10 border-light-blue" value="My Pages"
+    onclick="modalActions('pages','open')">
+</div>
+
+<div class="gutter fixed box-shadow" id="gutter">
+  <div class="fixed border-radius-10 light-blue-gradient settings no-select" onclick="modalActions('options','open')">
+    <span class="material-icons" style="height: 60px; width: 60px; font-size: 50px; margin-left: 5px; margin-top: 10px;"
+      class="no-select">settings</span>
+  </div>
+</div>
+</div>
+
+<div class="top-bar fixed width-100 box-shadow dark-blue-gradient"></div>
+
+<div class="modal-container width-100 box-shadow">
+  <div id="pages" class="modal fixed border-radius-10 dark-blue-gradient">
+    <div class="modal-content">
+      <hr class="modal-line border-light-blue">
+      <span class="my-modal-title no-select">My Pages</span>
+      <span class="close no-select" onclick="modalActions('pages','close')">&times;</span>
+      <div style="height: 600px; overflow-y: auto">
+        <div id="listView">
         </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="page-btns">
-    <input type="button" class="page-btn fixed hover z-index-10 border-radius-10 border-light-blue" value="My Pages"
-      onclick="modalActions('pages','open')">
-  </div>
-
-  <div class="gutter fixed box-shadow" id="gutter">
-    <div class="fixed border-radius-10 light-blue-gradient settings no-select" onclick="modalActions('options','open')">
-      <span class="material-icons"
-        style="height: 60px; width: 60px; font-size: 50px; margin-left: 5px; margin-top: 10px;"
-        class="no-select">settings</span>
-    </div>
-  </div>
-  </div>
-
-  <div class="top-bar fixed width-100 box-shadow dark-blue-gradient"></div>
-
-  <div class="modal-container width-100 box-shadow">
-    <div id="pages" class="modal fixed border-radius-10 dark-blue-gradient">
-      <div class="modal-content">
-        <hr class="modal-line border-light-blue">
-        <span class="my-modal-title no-select">My Pages</span>
-        <span class="close no-select" onclick="modalActions('pages','close')">&times;</span>
-        <div id="delete-buttons"></div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal-container width-100 box-shadow">
-    <div id="options" class="small-modal fixed border-radius-10 dark-blue-gradient">
-      <div class="modal-content">
-        <hr class="modal-line border-light-blue">
-        <span class="my-modal-title no-select">Options</span>
-        <span class="close no-select" onclick="modalActions('options','close')">&times;</span>
-        <button id="switchKeyMap" class="modal-btn fixed border-radius-10 border-light-blue"
-          onclick="changeKeyBindings()">Switch to Vim</button>
-      </div>
+<div class="modal-container width-100 box-shadow">
+  <div id="options" class="small-modal fixed border-radius-10 dark-blue-gradient">
+    <div class="modal-content">
+      <hr class="modal-line border-light-blue">
+      <span class="my-modal-title no-select">Options</span>
+      <span class="close no-select" onclick="modalActions('options','close')">&times;</span>
+      <button id="switchKeyMap" class="modal-btn fixed border-radius-10 border-light-blue"
+        onclick="changeKeyBindings()">Switch to Vim</button>
     </div>
   </div>
+</div>
 
-  <div class="top-center-items">
-    <div class="justify-content-center">
-      <h1 class="page-h1 fixed border-radius-10 no-select">page</h1>
-      <p class="info fixed">Make a new public webpage at [your-ship-url]/apps/page/[name]</p>
+<div class="modal-container width-100 box-shadow">
+  <div id="override" class="small-modal fixed border-radius-10 dark-blue-gradient">
+    <div class="modal-content">
+      <hr class="modal-line border-light-blue">
+      <span class="my-modal-title no-select">Override?</span>
+      <span class="close no-select" onclick="modalActions('override','close')">&times;</span>
+      <span class="override-text">Page with this name already exists. Override?</span>
+      <button id="overrideYes" class="override-btns o-yes fixed border-radius-10 border-light-blue"
+        style="float:left;">Yes</button>
+      <button onclick="modalActions('override','close')"
+        class="override-btns o-no fixed border-radius-10 border-light-blue" style="float:right;">No</button>
     </div>
   </div>
+</div>
 
-  <div class="bottom-right-items fixed">
-    <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" onclick="zoom('up')">
-      <span class="material-icons icon fixed">zoom_in</span>
-    </div>
-    <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" onclick="zoom('down')">
-      <span class="material-icons icon fixed">zoom_out</span>
-    </div>
-    <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" id="topBtn" onclick="jumpToLine(0);">
-      <span class="material-icons icon fixed">arrow_upward</span>
+<div class="modal-container width-100 box-shadow">
+  <div id="import" class="small-modal fixed border-radius-10 dark-blue-gradient">
+    <div class="modal-content">
+      <hr class="modal-line border-light-blue">
+      <span class="my-modal-title no-select">Import?</span>
+      <span class="close no-select" onclick="modalActions('import','close')">&times;</span>
+      <span class="override-text">Unsaved changes made will be lost. Continue?</span>
+      <button id="importYes" class="override-btns i-yes fixed border-radius-10 border-light-blue"
+        style="float:left;">Yes</button>
+      <button onclick="modalActions('import','close')"
+        class="override-btns i-no fixed border-radius-10 border-light-blue" style="float:right;">No</button>
     </div>
   </div>
-  <script>
+</div>
 
-    //UI Functions
+<div class="modal-container width-100 box-shadow">
+  <div id="deleteModal" class="small-modal fixed border-radius-10 dark-blue-gradient">
+    <div class="modal-content">
+      <hr class="modal-line border-light-blue">
+      <span class="my-modal-title no-select">Delete?</span>
+      <span class="close no-select" onclick="modalActions('deleteModal','close')">&times;</span>
+      <span class="override-text">Are you sure you want to delete this page?</span>
+      <button id="deleteYes" class="delete-btns d-yes fixed border-radius-10 border-light-blue"
+        style="float:left;">Yes</button>
+      <button onclick="modalActions('deleteModal','close')"
+        class="delete-btns d-no fixed border-radius-10 border-light-blue" style="float:right;">No</button>
+    </div>
+  </div>
+</div>
 
-    var fontSize = 16;
+<div class="top-center-items">
+  <div class="justify-content-center">
+    <h1 class="page-h1 fixed border-radius-10 no-select">&lt<span
+        style="color: rgb(0, 0, 29); font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">page</span>
+      &#47&gt
+    </h1>
+    <p class="info fixed">Make a new public webpage at [your-ship-url]/apps/page/[name]</p>
+  </div>
+</div>
 
-    getState()
-      .then((state) => renderPage(state))
+<div class="bottom-right-items fixed">
+  <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" onclick="zoom('up')">
+    <span class="material-icons icon fixed">zoom_in</span>
+  </div>
+  <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" onclick="zoom('down')">
+    <span class="material-icons icon fixed">zoom_out</span>
+  </div>
+  <div class="bottom-right-item no-select border-radius-10 light-blue-gradient" id="topBtn" onclick="jumpToLine(0);">
+    <span class="material-icons icon fixed">arrow_upward</span>
+  </div>
+</div>
+<script>
 
-    var codeMirror = CodeMirror.fromTextArea(document.querySelector('#codeMirror'), {
-      lineNumbers: true,
-      mode: 'htmlmixed',
-      theme: "rubyblue",
-      gutters: ["CodeMirror-linenumbers", "CodeMirror-lint-markers"],
-      lint: true,
-      lineWrapping: true,
-      autoCloseTags: true,
-      autoCloseBrackets: true,
-      matchBrackets: true,
-      autoRefresh: true,
-      viewportMargin: Infinity,
-      vimMode: false,
-      keyMap: "default",
-      extraKeys: {
-        "Ctrl-Space": "autocomplete",
-        "Ctrl-Q": function (cm) {
-          cm.foldCode(cm.getCursor());
-        }
-      },
-    });
+  //UI functions
 
-    codeMirror.on("change", function (cm, change) {
-      text = cm.getValue();
-      namebox = document.getElementById("nameBox").value;
-      console.log(text);
-      console.log("nb", namebox);
-      saveText()
-    });
+  var fontSize = 16;
+  var deletePage = "";
+  var importPage = "";
+  var importPageName = "";
+  var gState;
 
-    function changeKeyBindings() {
-      if (codeMirror.getOption("keyMap") !== "vim") {
-        codeMirror.setOption("keyMap", "vim");
-        codeMirror.setOption("vimMode", true);
-        document.getElementById("switchKeyMap").innerHTML = "Switch to Default";
-      } else {
-        codeMirror.setOption("keyMap", "default");
-        codeMirror.setOption("vimMode", false);
-        document.getElementById("switchKeyMap").innerHTML = "Switch to Vim";
+  var codeMirror = CodeMirror.fromTextArea(document.querySelector('#codeMirror'), {
+    lineNumbers: true,
+    mode: 'htmlmixed',
+    theme: "rubyblue",
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-lint-markers"],
+    lint: true,
+    lineWrapping: true,
+    autoCloseTags: true,
+    autoCloseBrackets: true,
+    matchBrackets: true,
+    autoRefresh: true,
+    viewportMargin: Infinity,
+    vimMode: false,
+    keyMap: "default",
+    extraKeys: {
+      "Ctrl-Space": "autocomplete",
+      "Ctrl-Q": function (cm) {
+        cm.foldCode(cm.getCursor());
       }
-    }
+    },
+  });
 
-    function zoom(arrow) {
-      if (arrow == 'up' && fontSize < 20) {
-        fontSize += 1;
-        $('.CodeMirror').css('font-size', fontSize + 'px')
-      } else if (arrow == 'down' && fontSize > 10) {
-        fontSize -= 1;
-        $('.CodeMirror').css('font-size', fontSize + 'px')
-      }
-      codeMirror.refresh();
-    };
+  getState()
+    .then((state) => renderPage(state))
 
-    codeMirror.setSize("100%", "92%");
+  function setDeletePage(page) {
+    deletePage = page;
+  }
 
-    function getLineNumber(textarea, indicator) {
-      indicator.innerHTML = document.getElementsByTagName("textarea")[0].value.substr(0, document.getElementsByTagName("textarea")[0].selectionStart).split("\n").length;
-    }
+  function setImportPage(i) {
+    importPageName = gState[i][0];
+    importPage = gState[i][1];
+  }
 
-    function saveText() {
-      namebox = document.querySelector("#nameBox").value;
-      console.log(namebox)
-    }
+  document.getElementById("importYes").addEventListener("click", function () {
+    document.getElementById("nameBox").value = importPageName;
+    codeMirror.setValue(importPage);
+    modalActions('import', 'close');
+    modalActions('pages', 'close');
+  });
 
-    function modalActions(modal, status) {
-      var modal = document.getElementById(modal);
-      if (status == "open") {
-        modal.style.opacity = "1";
-        modal.style.zIndex = "4";
-      } else if (status == "close") {
-        modal.style.opacity = "0";
-        modal.style.zIndex = "-4";
-      }
-    }
+  document.getElementById("deleteYes").addEventListener("click", function () {
+    postDeletePage(deletePage);
+  });
 
-    function jumpToLine(i) {
-      codeMirror.setCursor(i);
-      window.setTimeout(function () {
-        editor.setLineClass(i, null, "center-me");
-        var line = $('.CodeMirror-lines .center-me');
-        var h = line.parent();
-
-        $('.CodeMirror-scroll').scrollTop(0).scrollTop(line.offset().top - $('.CodeMirror-scroll').offset().top - Math.round($('.CodeMirror-scroll').height() / 2));
-      }, 200);
-      document.getElementById("scrollToTop").scrollTop = 0;
-    }
-
-    //HTTP Requests
-
-    function post(tag, data) {
-      fetch('/apps/page', {
-        method: 'POST',
-        body: JSON.stringify({ [tag]: data })
-      })
-      console.log(JSON.stringify({ [tag]: data }))
-    }
-
-    async function getState() {
-      const response = await fetch('/apps/page/state')
-      return response.json()
-    }
-
-    function postNewPage() {
-      var pages = getState().then((page) => {
-        console.log(page.length)
-        if (page == null || page == undefined) {
-          toastr.error("Error, check connection");
-          return;
-        }
-        for (var x = 0; x < page.length; x++) {
-          if (page[x][0] == document.getElementById("nameBox").value) {
-            toastr.error("Page already exists");
-            return;
-          }
-        }
-        if (codeMirror.getValue() == "") {
-          toastr.error("Page code is empty");
-          return;
-        }
-        if (document.getElementById("nameBox").value == "" || document.getElementById("nameBox").value == " " || document.getElementById("nameBox").value == undefined || document.getElementById("nameBox").value == null) {
-          toastr.error("Page name cannot be empty");
-          return;
-        }
-        else if (page.length > 10) {
-          toastr.error("You have reached the maximum number of pages");
-          return;
-        } else {
-          var nb = document.getElementById("nameBox").value;
-          var text = codeMirror.getValue();
-          post("new-page", [nb, text]);
-          console.log(namebox)
-          toastr.success("Page created");
-          setTimeout(function () {
-            location.reload();
-          }, 2000);
-        }
-      }
-      )
-    }
-
-    function postDeletePage() {
-      var page = event.currentTarget.myPage;
-      post("delete-page", page);
+  document.getElementById("overrideYes").addEventListener("click", function () {
+    var nb = document.getElementById("nameBox").value;
+    var text = codeMirror.getValue();
+    post("new-page", [nb, text]);
+    toastr.success("Page created");
+    setTimeout(function () {
       location.reload();
+    }, 2000);
+  });
+
+  function changeKeyBindings() {
+    if (codeMirror.getOption("keyMap") !== "vim") {
+      codeMirror.setOption("keyMap", "vim");
+      codeMirror.setOption("vimMode", true);
+      document.getElementById("switchKeyMap").innerHTML = "Switch to Default";
+    } else {
+      codeMirror.setOption("keyMap", "default");
+      codeMirror.setOption("vimMode", false);
+      document.getElementById("switchKeyMap").innerHTML = "Switch to Vim";
     }
+  }
 
-    function renderPage(state) {
-      const deletions = document.getElementById("delete-buttons");
+  function zoom(arrow) {
+    if (arrow == 'up' && fontSize < 20) {
+      fontSize += 1;
+      $('.CodeMirror').css('font-size', fontSize + 'px')
+    } else if (arrow == 'down' && fontSize > 10) {
+      fontSize -= 1;
+      $('.CodeMirror').css('font-size', fontSize + 'px')
+    }
+    codeMirror.refresh();
+  };
 
-      for (var i = 0; i < state.length; i++) {
-        const page = document.createElement("div");
-        page.className = "page light-blue-border border-radius-10";
-        deletions.appendChild(page);
+  codeMirror.setSize("100%", "92%");
 
-        const deleteButton = document.createElement("button");
-        deleteButton.className = "page-list-item";
-        deleteButton.innerHTML = "<span class='pages-title'>" + state[i][0] + "</span><button class='del'>Delete</button>";
-        deleteButton.myPage = state[i][0]
-        deleteButton.addEventListener('click', postDeletePage);
-        page.appendChild(deleteButton);
+  function modalActions(modal, status) {
+    var modal = document.getElementById(modal);
+    if (status == "open") {
+      modal.style.opacity = "1";
+      modal.style.zIndex = "4";
+    } else if (status == "close") {
+      modal.style.opacity = "0";
+      modal.style.zIndex = "-4";
+    }
+  }
+
+  function jumpToLine(i) {
+    codeMirror.setCursor(i);
+    window.setTimeout(function () {
+      editor.setLineClass(i, null, "center-me");
+      var line = $('.CodeMirror-lines .center-me');
+      var h = line.parent();
+
+      $('.CodeMirror-scroll').scrollTop(0).scrollTop(line.offset().top - $('.CodeMirror-scroll').offset().top - Math.round($('.CodeMirror-scroll').height() / 2));
+    }, 200);
+    document.getElementById("scrollToTop").scrollTop = 0;
+  }
+
+  function openLink(url) {
+    window.open(window.origin + "/apps/page/" + url, "_blank");
+  }
+
+  //HTTP requests and rendering
+
+  function post(tag, data) {
+    fetch('/apps/page', {
+      method: 'POST',
+      body: JSON.stringify({ [tag]: data })
+    })
+    console.log(JSON.stringify({ [tag]: data }))
+  }
+
+  async function getState() {
+    const response = await fetch('/apps/page/state')
+    return response.json()
+  }
+
+  function postNewPage() {
+    var isNameAllowed = /^[a-zA-Z0-9_.-]*$/.test(document.getElementById("nameBox").value);
+    if (!isNameAllowed) {
+      toastr.error("A page name can only contain letters and numbers, with no spaces");
+      return;
+    }
+    var pages = getState().then((page) => {
+      console.log(page.length)
+      if (page == null || page == undefined) {
+        toastr.error("Error, check connection");
+        return;
+      }
+      for (var x = 0; x < page.length; x++) {
+        if (page[x][0] == document.getElementById("nameBox").value) {
+          toastr.error("Page already exists");
+          modalActions("override", "open");
+          return;
+        }
+      }
+      if (codeMirror.getValue() == "") {
+        toastr.error("Page code is empty");
+        return;
+      }
+      if (document.getElementById("nameBox").value == "" || document.getElementById("nameBox").value == " " || document.getElementById("nameBox").value == undefined || document.getElementById("nameBox").value == null) {
+        toastr.error("Page name cannot be empty");
+        return;
+      } else {
+        var nb = document.getElementById("nameBox").value;
+        var text = codeMirror.getValue();
+        post("new-page", [nb, text]);
+        toastr.success("Page created and saved");
+        setTimeout(function () {
+          location.reload();
+        }, 2000);
       }
     }
+    )
+  }
 
-    // Set the options that I want
-    toastr.options = {
-      "closeButton": true,
-      "newestOnTop": false,
-      "progressBar": true,
-      "positionClass": "toast-top-right",
-      "preventDuplicates": false,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
+  function postDeletePage(id) {
+    var page = document.getElementById(id).innerHTML;
+    post("delete-page", page);
+    toastr.success("Page deleted");
+    setTimeout(function () {
+      location.reload();
+    }, 2000);
+  }
+
+  function postDeleteText(value) {
+    post("delete-page", value);
+  }
+
+  function renderPage(state) {
+    gState = state;
+    var listView = document.getElementById("listView");
+
+    for (var i = 0; i < state.length; i++) {
+      const page = document.createElement("div");
+      page.className = "page light-blue-border border-radius-10";
+      listView.appendChild(page);
+
+      const list = document.createElement("button");
+      list.className = "page-list-item";
+
+      list.innerHTML =
+        `
+        <div>
+          <span id='page${i}' class='pages-title'>${state[i][0]}</span>
+          <span class='del material-icons' onclick='setDeletePage("page${i}"); modalActions("deleteModal","open")'>delete
+          </span>
+          <button 
+            class='get-code material-icons' 
+            onclick="modalActions('import','open'); setImportPage('${i}')"
+            >download
+          </button>
+          <button class='link material-icons' onclick='openLink("${state[i][0]}")' rel='noopener noreferrer'>link
+          </button>
+        </div>
+        `;
+      page.appendChild(list);
     }
+  }
 
-    //For testing delete button UI
-    /*
-    var page = [];
+  toastr.options = {
+    "closeButton": true,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
 
-    page = [["Test", "Test"],["Test", "Test"],["Test", "Test"],["Test111111111111111", "Test"], ["Test", "Test"],["Test", "Test"],["Test", "Test"],["Test", "Test"],["Test", "Test"],["Test", "Test"],["Test", "Test"]]
+  //For testing delete button UI
+  /*
+  var page = [];
 
-    renderPage(page)
-    */
-  </script>
-</body>
+  page = [["Test", "Test"], ["Test", "Test"], ["Test", "Test"], ["Test111111111111111", "Test"], ["Test", "Test"], ["Test", "Test"], ["Test", "Test"], ["Test", "Test"], ["Test", "Test"], ["Test", "Test"], ["Test", "Test"], ["Test", "Test"]]
+
+  renderPage(page)
+  */
+</script>
