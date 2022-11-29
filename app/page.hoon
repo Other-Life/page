@@ -1,4 +1,4 @@
-/-  page
+/-  page, wallet=zig-wallet
 /+  dbug, default-agent, server, schooner
 /*  page-ui  %html  /app/page-ui/html
 |%
@@ -54,7 +54,7 @@
       (parse-request-line:server url.request.inbound-request)
     =+  send=(cury response:schooner eyre-id)
     ::
-    ?+    method.request.inbound-request  
+    ?+    method.request.inbound-request
       [(send [405 ~ [%stock ~]]) state]
       ::
         %'POST'
@@ -66,11 +66,11 @@
         [(send [405 ~ [%stock ~]]) state]
       =/  json  (de-json:html q.u.body.request.inbound-request)
       =/  action  (dejs-action +.json)
-      (handle-action action) 
-      :: 
+      (handle-action action)
+      ::
         %'GET'
-      ?+    site  
-          :_  state 
+      ?+    site
+          :_  state
           (send [404 ~ [%plain "404 - Not Found"]])
         ::
           [%apps %page ~]
@@ -92,7 +92,7 @@
           [%apps %page @tas ~]
         :_  state
         (send [200 ~ [%html (~(got by pages) `@t`+>-.site)]])
-      == 
+      ==
     ==
   ::
   ++  enjs-state
@@ -116,6 +116,7 @@
     %-  of
     :~  [%new-page (at ~[so so])]
         [%delete-page so]
+        [%tip (se %ud)]
     ==
   ::
   ++  handle-action
@@ -126,8 +127,42 @@
         %new-page
       ?>  ?!  =(url:action 'state')
       `state(pages (~(put by pages) url:action html:action))
+    ::
         %delete-page
       `state(pages (~(del by pages) url:action))
+    ::
+        %tip
+      ::  produce tip transaction and send to uqbar %wallet
+      =/  user-address=@ux
+        =-  ?>  ?=(%addresses -.-)
+            (head ~(tap in saved.-))
+        .^  wallet-update:wallet  %gx
+            /(scot %p our.bowl)/wallet/(scot %da now.bowl)/addresses/noun
+        ==
+      =/  zigs-account-id=@ux
+        %:  hash-data:smart:wallet
+            0x74.6361.7274.6e6f.632d.7367.697a
+            user-address
+            0x0
+            `@`'zigs'
+        ==
+      ::
+      :_  state  :_  ~
+      :*  %pass  /tip-poke
+          %agent  [our.bowl %uqbar]
+          %poke  %wallet-poke
+          !>  ^-  wallet-poke:wallet
+          :*  %transaction
+              ~
+              from=user-address
+              contract=0x74.6361.7274.6e6f.632d.7367.697a
+              town=0x0
+              :^    %give
+                  to=page-tip-address:page
+                amount.action
+              item=zigs-account-id
+          ==
+      ==
     ==
   --
 ++  on-peek  on-peek:def
