@@ -547,6 +547,8 @@
 <div class="page-btns">
   <input type="button" class="page-btn fixed hover z-index-10 border-radius-10 border-light-blue" value="My Pages"
     onclick="modalActions('pages','open')">
+    <input type="button" style="right:240px" class="page-btn fixed hover z-index-10 border-radius-10 border-light-blue" value="Tip $"
+    onclick="postMakeTip('1.000.000.000.000.000.000')">
 </div>
 
 <div class="gutter fixed box-shadow" id="gutter">
@@ -842,6 +844,11 @@
     }, 2000);
   }
 
+  function postMakeTip(amount) {
+    post("tip", amount);
+    toastr.success("Tip sent to wallet");
+  }
+
   function postDeleteText(value) {
     post("delete-page", value);
   }
@@ -864,8 +871,8 @@
           <span id='page${i}' class='pages-title'>${state[i][0]}</span>
           <span class='del material-icons' onclick='setDeletePage("page${i}"); modalActions("deleteModal","open")'>delete
           </span>
-          <button 
-            class='get-code material-icons' 
+          <button
+            class='get-code material-icons'
             onclick="modalActions('import','open'); setImportPage('${i}')"
             >download
           </button>
